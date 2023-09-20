@@ -6,4 +6,4 @@
 
 [build.environment]
   HUGO_VERSION = "0.101.0"
-  HUGO_THEME = "hugo-theme-massively"
+  HUGO_THEME = "repo"
