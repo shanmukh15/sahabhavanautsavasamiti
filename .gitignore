@@ -1,5 +1,5 @@
-# Local Netlify folder
-.netlify
-
-# Package Files
-node_modules/
+node_modules
+exampleSite/public
+exampleSite/resources
+.publish
+test/videos

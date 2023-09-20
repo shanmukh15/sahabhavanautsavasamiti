@@ -1,4 +1,4 @@
-baseURL = 'http://hugo-quickstart-template.netlify.com'
-languageCode = 'en-us'
-title = 'Netlify + Hugo Quickstart'
-theme = 'netlify-basic'
+[module]
+  [module.hugoVersion]
+    min = "0.101.0"
+    max = "0.111.3"

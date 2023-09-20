@@ -1,135 +1,80 @@
-[![hugo](https://user-images.githubusercontent.com/43764894/223559747-e9d7f19d-91bf-46a9-a0cb-8d6a40d3cfa3.png)](https://ntl.fyi/3P9w1mr)
+# Hugo Theme Massively
 
-# Hugo Quickstart Template   
+![](https://img.shields.io/badge/Hugo-%5E0.54.0-ff4088?style=flat-square&logo=hugo) [![e2e tests](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml/badge.svg)](https://github.com/curtiscde/hugo-theme-massively/actions/workflows/e2e.yml)
 
-This is a bare-bones Hugo project that has everything you need to quickly deploy it to [Netlify](https://netlify.com). 
+Massively theme ported from [HTML5 UP](https://html5up.net/) for use with the [Hugo static site generator](https://gohugo.io/).
 
-Hate reading, here's a video: https://youtu.be/t-tsRxxYdpk
+![](images/device-screenshots.png)
 
-Love reading, here's blog post: https://www.netlify.com/blog/deploy-your-hugo-app-quick/
+## Demo
 
-## Table of Contents:
+https://hugo-theme-massively.netlify.com/
 
-- [Quick Setup + Deploy Option](#quick-setup--deploy-option)
-- [Regular Setup](#regular-setup)
-  - [Cloning + Install Packages](#1-cloning--install-packages)
-  - [Deploying](#2-deploying)
-- [Styling](#styling)
-  - [Notes on Styling](#notes-on-styling)
-  - [Remove Styling](#remove-styling)
-- [Hugo + Netlify Resources](#hugo--netlify-resources)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
-  - [Removing Cypress](#removing-cypress)
-- [Want to learn more?](#want-to-learn-more)
+## Setup
 
-## Quick Setup + Deploy Option
+### Configuration
 
-Click this button and it will help you create a new repo, create a new Netlify project, and deploy!
+See the demo's configuration as an example:
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/hugo-quickstart)
+https://github.com/curtiscde/hugo-theme-massively/blob/master/exampleSite/config-prod.toml
 
-## Regular Setup
+#### Hugo Internal Templates
+The theme currently also supports the following ["internal templates" supplied by Hugo](https://gohugo.io/templates/internal/)
 
- ### 1. Cloning + Running Locally
+ - [Disqus](https://gohugo.io/templates/internal/#disqus)
+ - [Google Analytics](https://gohugo.io/templates/internal/#configure-google-analytics)
 
-  - Clone this repo with one of these options:
+### Cover Image
+The cover image URL is hard-coded, therefore to replace this add an image to the following location in your Hugo application:
 
-    - Click the 'Use this template' button at the top of the page
-    - Or via the command line `git clone https://github.com/netlify-templates/hugo-quickstart`
-
- - Start the Hugo sever & check it out:
-
-   - `hugo server -D`
-   - go to [http://localhost:1313/](http://localhost:1313/)
-
-  > Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s by running the `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/). 
-
-  ### 2. Deploying
-  - Install the Netlify CLI globally `npm install netlify-cli -g`
-    
-  - Run `hugo`
-
-  - Then use the `netlify deploy` for a deploy preview link or `netlify deploy --prod` to deploy to production
-
-  Here are a few other ways you can deploy this template:
-    
-  - Use the Netlify CLI's create from template command `netlify sites:create-template hugo-quickstart` which will create a repo, Netlify project, and deploy it
-    
-  - If you want to utilize continuous deployment through GitHub webhooks, run the Netlify command `netlify init` to create a new project based on your repo or `netlify link` to connect your repo to an existing project
-
-## Styling
-
-We've added some modern styling to this template using Sass within an external stylesheet, this will allow you to easily remove our styling and add in your own. 
-
-If you decide that you want to keep our styling you can review our style notes below. 
-
-### Notes on Styling
-
-The variables below give you the ability to change the gradient colors of the blobs and are interpolated into the URL string of the background-img within the body. 
-
-```css
-// Controls the blob blur gradient colors within the main tag's svg
---top-right-blur-1: #2ebc92;
---top-right-blur-2: #ecbb50;
---bttm-left-blur-1: #ff3e89;
---bttm-left-blur-2: #0095cc;
+```
+/static/images/bg.jpg
 ```
 
-## Remove Styling
+### Supported Languages
+ - [English](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/en.toml)
+ - [Dutch](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/nl.toml)
+ - [French](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/fr.toml)
+ - [Japanese](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/ja.toml)
+ - [Simplified Chinese](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/zh.toml)
+ - [Spanish](https://github.com/curtiscde/hugo-theme-massively/blob/master/i18n/es.toml)
 
-If you decide that our styling is not for you, all you'll need to do is remove the [demo-styling.css](https://github.com/netlify-templates/hugo-quickstart/blob/main/themes/netlify-basic/static/css/demo-styling.css) file. 
+## Custom Front Matter
+ - `disableComments` - If set to `true` this will disable comments on the post when Disqus is enabled.
 
-## Hugo + Netlify Resources
+## Custom `<head>`
 
-Here are some resources to help you on your Hugo + Netlify coding fun!
+If you wish to add custom CSS overrides, or other elements in the `<head>`, then this can be done by adding the following to the root of your Hugo app: `layouts/partials/htmlhead.custom.html`. Any content added to this file will then be injected at the end of the `<head>`.
 
-- [Hugo on Netlify Integration Page](https://ntl.fyi/3P9w1mr)
+## Development
 
+### Example Site Production Deployment
 
-Hope this template helps :) Happy coding 👩🏻‍💻!
+#### Production Deployment
 
----
-
-## Testing
-
-### Included Default Testing
-
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
-
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
-
-If your team is not interested in this tooling, you can remove them with ease!
-
-### Removing Renovate
-
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
-
-### Removing Cypress
-
-For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
-
-```diff
-[[plugins]]
-  package = "netlify-plugin-cypress"
--  [plugins.inputs.postBuild]
--    enable = true
--
--  [plugins.inputs]
--    enable = false 
+```
+$ cd exampleSite
+$ hugo --config config-prod.toml
 ```
 
-If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
+#### Running Locally
 
-```bash
-npm uninstall -D netlify-plugin-cypress
+```shell
+$ npm i
+$ npm run hugo-dev
+```
+OR
+```shell
+$ cd exampleSite
+$ hugo server --themesDir ../..
 ```
 
-And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
+## Original Theme Credits
 
-```bash
-npm uninstall cypress
-```
+ - [Massively by HTML5 UP](https://html5up.net/massively)
+
+ ## License
+
+This hugo theme is licensed under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/). 
+
+Read More - [LICENSE](LICENSE)
