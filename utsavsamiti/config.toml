@@ -4,7 +4,7 @@ baseURL = "http://localhost:1313/"
 theme = "hugo-theme-massively"
 googleanalytics = ""
 disqusShortname = ""
-disableKinds = ["taxonomy", "taxonomyTerm", "section"]
+disableKinds = ["taxonomy", "term", "section"]
 
 # [params]
   # set below parameter to define a favicon
@@ -24,7 +24,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 [languages]
 [languages.en]
   languageName = "English"
-[languages.es]
-  languageName = "Español"
-  title = "Massively - Versión Español"
+#[languages.es]
+#  languageName = "Español"
+#  title = "Massively - Versión Español"
 

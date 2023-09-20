@@ -1,18 +1,18 @@
-name = "Utsava Samiti"
+name = "Massively"
 license = "Creative Commons"
-licenselink = "https://github.com/shanmukh15/sahabhavanautsavasamiti/blob/master/LICENSE"
+licenselink = "https://github.com/curtiscde/hugo-theme-massively/blob/master/LICENSE"
 description = "An elegant open-source and mobile-first theme"
 homepage = "https://html5up.net/uploads/demos/massively/index.html"
-tags = ["utsav", "sahabhavana"]
-features = ["webpage"]
-min_version = "0.101.0"
+tags = ["blog", "html5up"]
+features = ["blog"]
+min_version = "0.54.0"
 
 [author]
-    name = "Shanmukha rao G"
-    repo = "https://github.com/shanmukh15/sahabhavanautsavasamiti.git"
+    name = "Curtis Timson"
+    homepage = "https://curtiscode.dev/"
 
 # If porting an existing theme
 [original]
-    author = "Curtis Timson"
-    homepage = "https://curtiscode.dev/"
+    author = "HTML5UP"
+    homepage = "https://html5up.net"
     repo = "https://html5up.net/massively"
